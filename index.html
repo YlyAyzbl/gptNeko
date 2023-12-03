@@ -876,7 +876,8 @@
             }, 10000);
             preEle.options.length = 5;
             if (locale === "zh") {
-                fetch("https://html.cveoy.top/gpt/zh-prompts.json", { // 注意以后可能需要修改该项
+                fetch("./prompts/zh-prompts.json", { // 注意以后可能需要修改该项
+                    mode: 'cors',
                     signal: downRoleController.signal
                 }).then(async (response) => {
                     let res = await response.json();
@@ -890,7 +891,8 @@
                     }
                 }).catch(e => { })
             } else {
-                fetch("https://cdn.jsdelivr.net/gh/f/awesome-chatgpt-prompts/prompts.csv", {
+                fetch("./prompts/prompts_en.csv", {
+                    mode: 'cors',
                     signal: downRoleController.signal
                 }).then(async (response) => {
                     let res = await response.text();
